@@ -18,11 +18,11 @@ function MyUI:__init()
     local go = Action("Go to ", 1)
     local interact = Action("Interact with ", 1)
 	-- Hand
-    local hand = Button(Image("media/$res/ui/hand.png"), function() self:setAction(interact); return 0 end)
+    local hand = Button(Image("media/ui/hand.png"), function() self:setAction(interact); return 0 end)
     hand:setPosition(VP(10, 0))
     self:addElement(hand)
     
-    local walk = Button(Image("media/$res/ui/walk.png"), function() self:setAction(go); return 0 end)
+    local walk = Button(Image("media/ui/walk.png"), function() self:setAction(go); return 0 end)
     walk:setPosition(VP(250, 0))
     self:addElement(walk)
 	

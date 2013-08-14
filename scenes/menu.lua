@@ -7,27 +7,28 @@ function Menu:__init()
 	Scene.__init(self, VP(4000,3000))
 	
 	-- set up main character
-	local actor_luise = require 'actors/luise'
-	local luise = actor_luise.create()
-	GAME:setMainCharacter(luise)
-	GAME:getViewport():setFollowing(luise)
+	local actor_hubert = require 'actors/hubert'
+	local hubert = actor_hubert.create()
+	GAME:setMainCharacter(hubert)
+	GAME:getViewport():setFollowing(hubert)
 	
 	-- set up scene
-	self:addBackground(Image("/media/$res/menu/background.png"), VP(0, 0), 0.0, 1.0)
-	self:addBackground(Image("/media/$res/menu/ground.png"), VP(0, 2500), 0.0, 1.0)
+	self:addBackground(Image("/media/menu/background.png"), VP(0, 0), 0.0, 1.0)
+	self:addBackground(Image("/media/menu/ground.png"), VP(0, 2500), 0.0, 1.0)
 	
 	self.sign_start = Actor('Start')
-	self.sign_start:addAnimation("default", Image("/media/$res/actors/signs/start.png"))
+	self.sign_start:addAnimation("default", Image("/media/actors/signs/start.png"))
 	self.sign_start:setPosition(VP(1000, 2505))
 	self:addActor(self.sign_start)
 	
 	self.sign_quit = Actor('Quit')
-	self.sign_quit:addAnimation("default", Image("/media/$res/actors/signs/quit.png"))
+	self.sign_quit:addAnimation("default", Image("/media/actors/signs/quit.png"))
 	self.sign_quit:setPosition(VP(3000, 2505))
+	self.sign_quit:setYOffset(100)
 	self:addActor(self.sign_quit)
 	
 	self.snail = Actor('')
-	self.snail:addAnimation("default", Image("/media/$res/actors/waving_snail.png"))
+	self.snail:addAnimation("default", Image("/media/actors/waving_snail.png"))
 	self.snail:setPosition(VP(3600, 2850))
 	self:addActor(self.snail)
 	

@@ -1,0 +1,20 @@
+-- scenes/intro.lua -- Intro cutscene
+module('scenes/intro', package.seeall)
+
+class 'Intro' (Scene)
+
+function Intro:__init()
+	Scene.__init(self, VP(4000,3000))
+	--self:addBackground(Image("/media/black.png"), VP(0, 0), 0.0, 1.0)
+	self:addBackground(Image("/media/intro/face1.png"), VP(0, 0), 0.0, 1.0)
+	WaitTask(3000):block()
+	self:addBackground(Image("/media/intro/face2.png"), VP(0, 0), 0.0, 1.0)
+	WaitTask(3000):block()
+	self:addBackground(Image("/media/intro/face3.png"), VP(0, 0), 0.0, 1.0)
+	WaitTask(3000):block()
+	self:addBackground(Image("/media/intro/face4.png"), VP(0, 0), 0.0, 1.0)
+end
+
+function Intro:onEnter() -- reset actor's positions
+	GAME:enableUserControl(false)
+end
