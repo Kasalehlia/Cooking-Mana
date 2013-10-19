@@ -7,8 +7,8 @@ function create()
 	mc_walk:setAnimation(1, ImageSprite("/media/actors/hubert/left/", 100))
 	
 	local mc_stand = DirectionAnimation(2, -0.5*math.pi)
-	mc_stand:setAnimation(0, Image("/media/actors/hubert/right/right_2.png"))
-	mc_stand:setAnimation(1, Image("/media/actors/hubert/left/left_2.png"))
+	mc_stand:setAnimation(0, Image("/media/actors/hubert/stand_right.png"))
+	mc_stand:setAnimation(1, Image("/media/actors/hubert/stand_left.png"))
 	
 	local mc = Actor("Hubert")
 	mc:addAnimation("default", mc_stand)
