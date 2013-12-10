@@ -15,17 +15,22 @@ function MyUI:__init()
 	atborder:setPosition(VP(0, 200))
 	self:addElement(atborder)
 	
-    local go = Action("Go to ", 1)
-    local interact = Action("Interact with ", 1)
-	-- Hand
-    local hand = Button(Image("media/ui/hand.png"), function() self:setAction(interact); return 0 end)
-    hand:setPosition(VP(10, 0))
-    self:addElement(hand)
-    
-    local walk = Button(Image("media/ui/walk.png"), function() self:setAction(go); return 0 end)
-    walk:setPosition(VP(250, 0))
-    self:addElement(walk)
-	
+  local go = Action("Go to ", 1)
+  local interact = Action("Interact with ", 1)
+  local pickup = Action("Pick up ", 1)
+  
+  local goButton = Button(Image("media/ui/walkto.png"), function() self:setAction(go); return 0 end)
+  goButton:setPosition(VP(0, 0))
+  self:addElement(goButton)
+
+  local interactButton = Button(Image("media/ui/interact.png"), function() self:setAction(interact); return 0 end)
+  interactButton:setPosition(VP(150, 0))
+  self:addElement(interactButton)
+
+  local pickupButton = Button(Image("media/ui/pickup.png"), function() self:setAction(pickup); return 0 end)
+  pickupButton:setPosition(VP(300, 0))
+  self:addElement(pickupButton)
+  
 	-- Action text
 	local at = ActionText(Font("media/fonts/tommy_holloway.ttf", 40, 1))
 	at:setPosition(VP(600, 120))
